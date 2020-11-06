@@ -19,6 +19,18 @@ RUN apt-get update \
             gnupg \
             libssl1.0-dev \
             node-less \
+#        mio
+            python3-dev \
+            python3-cffi \
+            libxml2-dev \
+            libxslt1-dev \
+#            libssl-dev \
+            python3-lxml \
+            python3-cryptography \
+            python3-openssl \
+            python3-certifi \
+            python3-defusedxml \
+#        fin mio
             python3-num2words \
             python3-pip \
             python3-phonenumbers \
@@ -76,6 +88,8 @@ RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/od
         && rm -rf /var/lib/apt/lists/* odoo.deb
 
 # Copy entrypoint script and Odoo configuration file
+RUN pip3 install xmltodict dicttoxml pdf417gen pyOpenSSL urllib3 SOAPpy pysftp num2words signxml xlrd
+#dicttoxml pdf417gen pyOpenSSL cchardet urllib3 SOAPpy pysftp num2words signxml xlrd
 COPY ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
 
