@@ -24,7 +24,6 @@ RUN apt-get update \
             python3-cffi \
             libxml2-dev \
             libxslt1-dev \
-#            libssl-dev \
             python3-lxml \
             python3-cryptography \
             python3-openssl \
