@@ -87,7 +87,7 @@ RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/od
         && rm -rf /var/lib/apt/lists/* odoo.deb
 
 # Copy entrypoint script and Odoo configuration file
-RUN pip3 install xmltodict dicttoxml pdf417gen pyOpenSSL urllib3 SOAPpy pysftp num2words signxml xlrd
+RUN pip3 install xmltodict dicttoxml pdf417gen pyOpenSSL urllib3 SOAPpy pysftp num2words signxml xlrd facturacion_electronica
 #dicttoxml pdf417gen pyOpenSSL cchardet urllib3 SOAPpy pysftp num2words signxml xlrd
 COPY ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
